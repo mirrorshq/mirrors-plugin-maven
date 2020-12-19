@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<plugin id="maven">
-  <mirror-site id="maven">
-    <name>Maven Central Repository Mirror</name>
-    <storage>file</storage>
-    <advertiser>
-      <interface>file:http</interface>
-    </advertiser>
-    <initializer>
-      <executable>maven_initializer.py</executable>
-    </initializer>
-    <updater>
-      <executable>maven_updater.py</executable>
-      <cron-expression>0 * * * *</cron-expression>
-    </updater>
-  </mirror-site>
-</plugin>
+<mirror-site id="maven">
+  <name>Maven Central Repository Mirror</name>
+  <storage type="file"/>
+  <advertiser type="httpdir"/>
+  <initializer>
+    <executable>maven_initializer.py</executable>
+  </initializer>
+  <updater>
+    <executable>maven_updater.py</executable>
+    <cron-expression>0 * * * *</cron-expression>
+  </updater>
+</mirror-site>
